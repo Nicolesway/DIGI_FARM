@@ -1,37 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIGIFARM SITE</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digi‑Farm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <div class="logo">🌱</div>
+          <div class="brand-text">
+            <div class="brand-name">Digi‑Farm</div>
+            <div class="brand-tag">Grow smart. Market better.</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#home">Home</a>
+          <a href="#experts">Expert Advisory</a>
+          <a href="#market">Marketing</a>
+          <a href="#inputs">Inputs Supply</a>
+          <a href="#services">Extensive Services</a>
+          <a href="#farmer">Farmer</a>
+          <a id="adminNavLink" class="admin-only" href="#admin" hidden>Admin</a>
+        </nav>
+        <div class="auth-cta">
+          <div id="welcomeUser" class="welcome" hidden></div>
+          <button id="btnShowAuth" class="btn btn-outline">Login / Register</button>
+          <button id="btnLogout" class="btn btn-text" hidden>Logout</button>
+        </div>
+      </div>
+    </header>
 
-</head>
-<body>
-    <a href="#" class="logo"><i class="fi fi-rs-plant-care"></i>DIGIFARM</a>
-    <nav class="navbar">
-        
-            <a href="#Marketplace">Marketplace</a>
-            <a href="#Dashboard">Dashboard</a>
-            <button>LOG IN</button>
-    
-    </nav>
-    <!--The main body-->
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <h1>Cultivate Success with Digi‑Farm</h1>
+            <p>
+              Connect with experts, request essential services, source quality inputs,
+              and sell your farm products — all in one simple platform.
+            </p>
+            <div class="hero-ctas">
+              <a href="#market" class="btn btn-primary">Explore Market</a>
+              <a href="#farmer" class="btn btn-secondary">Join as Farmer</a>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="hero-card">
+              <div class="stat">
+                <div class="stat-num" id="statProducts">0</div>
+                <div class="stat-label">Products</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num" id="statExperts">0</div>
+                <div class="stat-label">Experts</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num" id="statServices">0</div>
+                <div class="stat-label">Services</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <div class="Container">
-        <p><h1>Welcome to Digifarm</h1></p><br>
-    <p>Your all-in-one platform for expert advice, market access, and<br>essential farming resources. Empowering farmerrs through technology.</p>
-    <br>
-    <button>Get Started</button>
-    </div>
+      <section id="experts" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Expert Advisory</h2>
+            <p>Find specialists to guide your farming decisions.</p>
+          </div>
+          <div id="expertsList" class="cards-grid"></div>
+        </div>
+      </section>
 
-    <!--Contains the services we offer-->
-    <br>
-    <div class="Wrapper">
-        <p><h4>Services</h4></p>
-        <div class="Advisory"></div>
-    </div>
-    
- </body>
+      <section id="market" class="section alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>Marketing</h2>
+            <p>Discover fresh farm products posted by farmers.</p>
+          </div>
+          <div id="productsList" class="cards-grid"></div>
+        </div>
+      </section>
+
+      <section id="inputs" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Inputs Supply</h2>
+            <p>Source reliable tools, fertilizers, and quality seeds.</p>
+          </div>
+
+          <div class="tabs">
+            <button class="tab-btn active" data-tab="tabTools">Tools</button>
+            <button class="tab-btn" data-tab="tabFertilizers">Fertilizers</button>
+            <button class="tab-btn" data-tab="tabSeeds">Quality Seeds</button>
+          </div>
+
+          <div id="tabTools" class="tab-panel active">
+            <div id="supplyListTools" class="cards-grid"></div>
+          </div>
+          <div id="tabFertilizers" class="tab-panel">
+            <div id="supplyListFertilizers" class="cards-grid"></div>
+          </div>
+          <div id="tabSeeds" class="tab-panel">
+            <div id="supplyListSeeds" class="cards-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>Extensive Services</h2>
+            <p>Professional services to boost productivity and resilience.</p>
+          </div>
+          <div id="servicesList" class="cards-grid"></div>
+        </div>
+      </section>
+
+      <section id="farmer" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Farmer Portal</h2>
+            <p>Register or login, request services, consult experts, and post products.</p>
+          </div>
+
+          <div class="grid-2">
+            <div class="card">
+              <h3>Register</h3>
+              <form id="registerForm" class="form">
+                <div class="form-row">
+                  <label for="regName">Name</label>
+                  <input id="regName" name="name" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="regContact">Contact</label>
+                  <input id="regContact" name="contact" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="regRole">Role</label>
+                  <select id="regRole" name="role" required>
+                    <option value="farmer">Farmer</option>
+                    <option value="admin">Admin</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="regPassword">Password</label>
+                  <input id="regPassword" name="password" type="password" required />
+                </div>
+                <button class="btn btn-primary" type="submit">Create account</button>
+              </form>
+            </div>
+
+            <div class="card">
+              <h3>Login</h3>
+              <form id="loginForm" class="form">
+                <div class="form-row">
+                  <label for="loginContact">Contact</label>
+                  <input id="loginContact" name="contact" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="loginPassword">Password</label>
+                  <input id="loginPassword" name="password" type="password" required />
+                </div>
+                <button class="btn btn-secondary" type="submit">Login</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="farmerActions" class="grid-3" hidden>
+            <div class="card">
+              <h3>Request Extensive Services</h3>
+              <form id="formRequestService" class="form">
+                <div class="form-row">
+                  <label for="reqServiceType">Service</label>
+                  <select id="reqServiceType" name="service" required>
+                    <option value="Veterinary">Veterinary</option>
+                    <option value="Agronomy">Agronomy Services</option>
+                    <option value="Machinery">Farm Machinery & Equipment</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="reqServiceContact">Contact</label>
+                  <input id="reqServiceContact" name="contact" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="reqServiceDetails">Details</label>
+                  <textarea id="reqServiceDetails" name="details" rows="3" placeholder="Describe your request" required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit request</button>
+              </form>
+            </div>
+
+            <div class="card">
+              <h3>Request Expert Insights</h3>
+              <form id="formRequestExpert" class="form">
+                <div class="form-row">
+                  <label for="reqExpertSpec">Specialization</label>
+                  <select id="reqExpertSpec" name="specialization" required>
+                    <option value="Veterinary">Veterinary</option>
+                    <option value="Agronomy">Agronomy</option>
+                    <option value="Soil Science">Soil Science</option>
+                    <option value="Irrigation">Irrigation</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="reqExpertContact">Contact</label>
+                  <input id="reqExpertContact" name="contact" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="reqExpertMessage">Message</label>
+                  <textarea id="reqExpertMessage" name="message" rows="3" placeholder="Ask your question" required></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Send enquiry</button>
+              </form>
+            </div>
+
+            <div class="card">
+              <h3>Request Input Supply</h3>
+              <form id="formRequestSupply" class="form">
+                <div class="form-row">
+                  <label for="reqSupplyCategory">Category</label>
+                  <select id="reqSupplyCategory" name="category" required>
+                    <option value="Tools">Tools</option>
+                    <option value="Fertilizers">Fertilizers</option>
+                    <option value="Seeds">Quality Seeds</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="reqSupplyItem">Item</label>
+                  <input id="reqSupplyItem" name="item" type="text" placeholder="e.g., Hoe, Urea, Maize Hybrid" required />
+                </div>
+                <div class="form-row">
+                  <label for="reqSupplyQty">Quantity</label>
+                  <input id="reqSupplyQty" name="quantity" type="text" placeholder="e.g., 10 units, 50 kg" required />
+                </div>
+                <div class="form-row">
+                  <label for="reqSupplyContact">Contact</label>
+                  <input id="reqSupplyContact" name="contact" type="text" required />
+                </div>
+                <button class="btn btn-primary" type="submit">Request supply</button>
+              </form>
+            </div>
+          </div>
+
+          <div id="farmerProducts" class="card" hidden>
+            <h3>Post Products to Market</h3>
+            <form id="formPostProduct" class="form inline">
+              <div class="form-row">
+                <label for="prodName">Name of the product</label>
+                <input id="prodName" name="name" type="text" required />
+              </div>
+              <div class="form-row">
+                <label for="prodPrice">Price</label>
+                <input id="prodPrice" name="price" type="number" min="0" step="0.01" required />
+              </div>
+              <div class="form-row">
+                <label for="prodContact">Contact of the farmer</label>
+                <input id="prodContact" name="contact" type="text" required />
+              </div>
+              <button class="btn btn-secondary" type="submit">Post Product</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="admin" class="section alt" hidden>
+        <div class="container">
+          <div class="section-head">
+            <h2>Admin Dashboard</h2>
+            <p>Add experts, supply inputs, and extensive services. Review user requests.</p>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <h3>Add Expert Information</h3>
+              <form id="formExpertAdd" class="form">
+                <div class="form-row">
+                  <label for="expertName">Name</label>
+                  <input id="expertName" name="name" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="expertContact">Contact</label>
+                  <input id="expertContact" name="contact" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="expertSpec">Specialization</label>
+                  <input id="expertSpec" name="specialization" type="text" placeholder="e.g., Veterinary, Agronomy" required />
+                </div>
+                <button class="btn btn-primary" type="submit">Add Expert</button>
+              </form>
+            </div>
+
+            <div class="card">
+              <h3>Add Supply Inputs</h3>
+              <form id="formSupplyAdd" class="form">
+                <div class="form-row">
+                  <label for="supplyCategory">Category</label>
+                  <select id="supplyCategory" name="category" required>
+                    <option value="Tools">Tools</option>
+                    <option value="Fertilizers">Fertilizers</option>
+                    <option value="Seeds">Quality Seeds</option>
+                  </select>
+                </div>
+                <div class="form-row">
+                  <label for="supplyName">Item Name</label>
+                  <input id="supplyName" name="name" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="supplyContact">Supplier Contact</label>
+                  <input id="supplyContact" name="contact" type="text" required />
+                </div>
+                <button class="btn btn-primary" type="submit">Add Supply</button>
+              </form>
+            </div>
+
+            <div class="card">
+              <h3>Add Extensive Services Provided</h3>
+              <form id="formServiceAdd" class="form">
+                <div class="form-row">
+                  <label for="serviceName">Name</label>
+                  <input id="serviceName" name="name" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="serviceContact">Contact</label>
+                  <input id="serviceContact" name="contact" type="text" required />
+                </div>
+                <div class="form-row">
+                  <label for="serviceType">Service</label>
+                  <input id="serviceType" name="service" type="text" placeholder="e.g., Veterinary, Agronomy" required />
+                </div>
+                <button class="btn btn-primary" type="submit">Add Service</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="grid-3 mt-lg">
+            <div class="card">
+              <h3>Service Requests</h3>
+              <div id="adminServiceRequests" class="list"></div>
+            </div>
+            <div class="card">
+              <h3>Expert Enquiries</h3>
+              <div id="adminExpertRequests" class="list"></div>
+            </div>
+            <div class="card">
+              <h3>Input Supply Requests</h3>
+              <div id="adminSupplyRequests" class="list"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Digi‑Farm</div>
+        <div class="footer-links">
+          <a href="#experts">Experts</a>
+          <a href="#inputs">Inputs</a>
+          <a href="#services">Services</a>
+          <a href="#market">Market</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./app.js" defer></script>
+  </body>
 </html>
